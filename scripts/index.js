@@ -29,3 +29,23 @@ setInterval(() => {
     });
   }
 }, 3000);
+
+//
+// Show or hide coming soon video
+//
+function toggleComingSoonModal(option) {
+  const bodyEl = document.querySelector("body");
+  const modalEl = document.getElementById("comingSoonModal");
+  if (option === "OPEN") {
+    modalEl.style.display = "flex";
+    // Disable scrolling
+    window.scrollTo(0, 0);
+    bodyEl.style.height = "100vh";
+    bodyEl.style.overflow = "hidden";
+  } else {
+    modalEl.style.display = "none";
+    // Enable scrolling
+    bodyEl.style.height = "auto";
+    bodyEl.style.overflow = "auto";
+  }
+}
